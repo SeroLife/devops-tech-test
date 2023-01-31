@@ -6,16 +6,14 @@ To develop a system for ingesting and storing National Grid consumption data eve
 
 ## Requirements
 
-- Infrastructure must be managed by IaC (In house we use Terraform)
-- You must use the https://api.carbonintensity.org.uk API to ingest the data
-  - Example usage of the above API - https://api.carbonintensity.org.uk/intensity/2023-01-01T10:00/2023-01-01T11:00
-- You can use any programming language or framework for the API (In house we use Typescript and NodeJS)
+- Infrastructure must be managed by Terraform
+- You must use the GCP platform
 
 ## Deliverables
 
 - A system for ingesting National Grid consumption data every hour
 - A persistent data store for storing the ingested data
-- A public API for accessing the stored data
+- A public API for accessing the stored data (supplied)
 - A deployed API and infrastructure
 - Example usage of the API using CURL or Postman
 
@@ -24,3 +22,11 @@ To develop a system for ingesting and storing National Grid consumption data eve
 - Implement monitoring and logging capabilities
 - CI/CD pipeline that deploys the infra and code
 - Documentation on how to use the API
+
+## Instructions
+
+- You must setup a persistent data store and update the `.env` file in the data directory to point to your chosen data store
+- There are two ways to ingest the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
+- There are two ways to fetch the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
+- Prisma is being used as the ORM for this project - When setting up your persistent store, you can choose from any of the supported DB's listed on Prismas website (https://www.prisma.io/docs/reference/database-reference/supported-databases)
+- When you are ready, just run `npx prisma db push` to migrate your DB schema (you can do this locally or via a CI/CD pipeline)
