@@ -25,7 +25,7 @@ To develop a system for ingesting and storing National Grid consumption data eve
 
 ## Instructions
 
-- You must setup a persistent data store and update the `.env` file in the data directory to point to your chosen data store
+- You must setup a persistent data store and update the `.env` file in the data directory to point to your chosen data store and update the provider block and update the provider block in the schema.prisma file to be the chosen DB provider e.g. postgressql, mysql, cockroachdb
 - There are two ways to ingest the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
 - There are two ways to fetch the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
 - Prisma is being used as the ORM for this project - When setting up your persistent store, you can choose from any of the supported **SQL** DB's listed on Prismas website (https://www.prisma.io/docs/reference/database-reference/supported-databases)
