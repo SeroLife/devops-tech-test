@@ -28,5 +28,15 @@ To develop a system for ingesting and storing National Grid consumption data eve
 - You must setup a persistent data store and update the `.env` file in the data directory to point to your chosen data store
 - There are two ways to ingest the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
 - There are two ways to fetch the data, either by a cloud function or a simple NodeJS application that could be containerized (this can be found in the `data` directory)
-- Prisma is being used as the ORM for this project - When setting up your persistent store, you can choose from any of the supported DB's listed on Prismas website (https://www.prisma.io/docs/reference/database-reference/supported-databases)
+- Prisma is being used as the ORM for this project - When setting up your persistent store, you can choose from any of the supported **SQL** DB's listed on Prismas website (https://www.prisma.io/docs/reference/database-reference/supported-databases)
 - When you are ready, just run `npx prisma db push` to migrate your DB schema (you can do this locally or via a CI/CD pipeline)
+
+- To build the applications do the following
+  - `cd data`
+  - `npm install`
+  - `npx prisma generate`
+  - `npm run build`
+
+The above commands will output the compiled code in the `dist` directory inside the `data` directory
+
+You can then deploy the code to a cloud function or containerize it and deploy it to a container platform

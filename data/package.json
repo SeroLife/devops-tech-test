@@ -1,10 +1,9 @@
 {
-  "name": "get-names-function",
+  "name": "devops-test",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npx tsc",
-    "zip": "zip -r archive.zip . -x 'node_modules/*'"
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
