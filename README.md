@@ -8,6 +8,7 @@ To develop a system for ingesting and storing National Grid consumption data eve
 
 - Infrastructure must be managed by Terraform
 - You must use the GCP platform
+- You must have Node installed on your machine
 
 ## Deliverables
 
